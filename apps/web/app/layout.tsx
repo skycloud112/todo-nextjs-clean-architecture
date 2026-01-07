@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
@@ -8,11 +10,6 @@ const theme = createTheme({
     mode: 'light',
   },
 });
-
-export const metadata = {
-  title: 'Todo App - Clean Architecture Demo',
-  description: 'A demonstration of clean architecture patterns with Next.js',
-};
 
 type RootLayoutProps = {
   children: React.ReactNode;

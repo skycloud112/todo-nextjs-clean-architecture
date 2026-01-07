@@ -2,13 +2,12 @@
 
 import { TodoGatewayImpl } from '@repo/gateways/TodoGatewayImpl';
 import { getSharedPool } from '@repo/gateways/poolUtils';
+import { POSTGRES_URL } from '../../../../env';
 import {
   CreateTodoUseCase,
   type CreateTodoRequest,
   type CreateTodoResponse,
 } from './CreateTodoUseCase';
-
-const POSTGRES_URL = process.env.POSTGRES_URL!;
 
 export const CreateTodoUseCaseCreateTodoAction = async (
   request: CreateTodoRequest,

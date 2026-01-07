@@ -2,9 +2,8 @@
 
 import { TodoGatewayImpl } from '@repo/gateways/TodoGatewayImpl';
 import { getSharedPool } from '@repo/gateways/poolUtils';
+import { POSTGRES_URL } from '../../../../env';
 import { DeleteTodoUseCase, type DeleteTodoRequest } from './DeleteTodoUseCase';
-
-const POSTGRES_URL = process.env.POSTGRES_URL!;
 
 export const DeleteTodoUseCaseDeleteTodoAction = async (
   request: DeleteTodoRequest,

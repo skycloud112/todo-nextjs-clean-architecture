@@ -39,7 +39,7 @@ Actions wrap use cases and handle dependency injection with the `'use server'` d
 ```typescript
 // apps/web/app/todos/useCases/CreateTodoUseCase/CreateTodoUseCaseActions.ts
 
-"use server";
+'use server';
 
 export const CreateTodoUseCaseCreateTodoAction = async (
   request: CreateTodoRequest,
@@ -65,12 +65,12 @@ export const useCreateTodo = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationKey: ["todos", "create"],
+    mutationKey: ['todos', 'create'],
     mutationFn: async (title: string) => {
       return CreateTodoUseCaseCreateTodoAction({ title });
     },
     onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: ["todos"] });
+      await queryClient.invalidateQueries({ queryKey: ['todos'] });
     },
   });
 };
@@ -148,7 +148,7 @@ type TestContext = {
 };
 
 const createTestContext = (): TestContext => {
-  vi.setSystemTime(new Date("2025-01-15T12:00:00.000Z"));
+  vi.setSystemTime(new Date('2025-01-15T12:00:00.000Z'));
   const todoGateway = new InMemoryTodoGateway();
 
   const createUseCase = (): CreateTodoUseCase => {
@@ -158,21 +158,21 @@ const createTestContext = (): TestContext => {
   return { todoGateway, createUseCase };
 };
 
-describe("CreateTodoUseCase", () => {
+describe('CreateTodoUseCase', () => {
   let ctx: TestContext;
 
   beforeEach(() => {
     ctx = createTestContext();
   });
 
-  it("should create a todo with the given title", async () => {
+  it('should create a todo with the given title', async () => {
     const useCase = ctx.createUseCase();
 
-    const response = await useCase.createTodo({ title: "Buy groceries" });
+    const response = await useCase.createTodo({ title: 'Buy groceries' });
 
     // Verify state change in gateway
     const createdTodo = await ctx.todoGateway.getTodo(response.todoId);
-    expect(createdTodo!.title).toBe("Buy groceries");
+    expect(createdTodo!.title).toBe('Buy groceries');
     expect(createdTodo!.completed).toBe(false);
   });
 });
@@ -183,7 +183,7 @@ describe("CreateTodoUseCase", () => {
 ```typescript
 // packages/gateways/src/TodoGateway/command/impls/_tests/createTodo.spec.ts
 
-describe("createTodo", () => {
+describe('createTodo', () => {
   let pool: pg.Pool;
 
   beforeAll(async () => {
@@ -198,12 +198,12 @@ describe("createTodo", () => {
     await cleanupTodoTestData(pool);
   });
 
-  it("should create a todo with all fields", async () => {
-    const todo = new Todo("1", "Test Todo", false, now, now);
+  it('should create a todo with all fields', async () => {
+    const todo = new Todo('1', 'Test Todo', false, now, now);
     await createTodo(pool, todo);
 
-    const retrieved = await getTodo(pool, "1");
-    expect(retrieved!.title).toBe("Test Todo");
+    const retrieved = await getTodo(pool, '1');
+    expect(retrieved!.title).toBe('Test Todo');
   });
 });
 ```
@@ -299,7 +299,7 @@ pnpm install
 
 ### Environment Setup
 
-Create `.env.local` in `apps/web/`:
+Create `.env` in `apps/web/`:
 
 ```env
 POSTGRES_URL=postgresql://testuser:test@localhost:5432/testdb
@@ -351,4 +351,5 @@ pnpm ts
 - **State Management**: React Query
 - **Database**: PostgreSQL with @nearform/sql
 - **Testing**: Vitest
+- **Formatting**: Prettier (ESLint is not used)
 - **Monorepo**: Turborepo with pnpm workspaces

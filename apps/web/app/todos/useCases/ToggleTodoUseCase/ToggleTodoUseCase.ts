@@ -1,4 +1,4 @@
-import type { TodoGateway } from "@repo/gateways/TodoGateway";
+import type { TodoGateway } from '@repo/gateways/TodoGateway';
 
 export type ToggleTodoRequest = {
   todoId: string;

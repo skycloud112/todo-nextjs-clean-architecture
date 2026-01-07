@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   List,
   ListItem,
@@ -12,9 +12,9 @@ import {
   Typography,
   Box,
   CircularProgress,
-} from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import type { TodoDto } from "../useCases/GetTodosUseCase/GetTodosUseCase";
+} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import type { TodoDto } from '../useCases/GetTodosUseCase/GetTodosUseCase';
 
 type TodoListProps = {
   todos: TodoDto[];
@@ -31,7 +31,7 @@ export const TodoList = ({
 }: TodoListProps): React.ReactElement => {
   if (isLoading) {
     return (
-      <Box sx={{ display: "flex", justifyContent: "center", py: 4 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
         <CircularProgress />
       </Box>
     );
@@ -39,7 +39,7 @@ export const TodoList = ({
 
   if (todos.length === 0) {
     return (
-      <Typography color="text.secondary" sx={{ textAlign: "center", py: 4 }}>
+      <Typography color='text.secondary' sx={{ textAlign: 'center', py: 4 }}>
         No todos yet. Add one above!
       </Typography>
     );
@@ -51,11 +51,7 @@ export const TodoList = ({
         <ListItem
           key={todo.id}
           secondaryAction={
-            <IconButton
-              edge="end"
-              aria-label="delete"
-              onClick={() => onDelete(todo.id)}
-            >
+            <IconButton edge='end' aria-label='delete' onClick={() => onDelete(todo.id)}>
               <DeleteIcon />
             </IconButton>
           }
@@ -63,18 +59,13 @@ export const TodoList = ({
         >
           <ListItemButton onClick={() => onToggle(todo.id)} dense>
             <ListItemIcon>
-              <Checkbox
-                edge="start"
-                checked={todo.completed}
-                tabIndex={-1}
-                disableRipple
-              />
+              <Checkbox edge='start' checked={todo.completed} tabIndex={-1} disableRipple />
             </ListItemIcon>
             <ListItemText
               primary={todo.title}
               sx={{
-                textDecoration: todo.completed ? "line-through" : "none",
-                color: todo.completed ? "text.secondary" : "text.primary",
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                color: todo.completed ? 'text.secondary' : 'text.primary',
               }}
             />
           </ListItemButton>

@@ -1,4 +1,4 @@
-import type { Todo } from "@repo/entities/Todo";
+import type { Todo } from '@repo/entities/Todo';
 
 export interface TodoGateway {
   createTodo(todo: Todo): Promise<void>;

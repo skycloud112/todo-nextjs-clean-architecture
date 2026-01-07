@@ -1,23 +1,18 @@
-import type pg from "pg";
-import { Todo } from "@repo/entities/Todo";
-import { createPool, closePool } from "../poolUtils.js";
-import { createTodoTable, deleteAllTodos } from "../tableUtils/todoUtils.js";
-import { createTodo } from "./command/impls/createTodo.js";
+import type pg from 'pg';
+import { Todo } from '@repo/entities/Todo';
+import { createPool, closePool } from '../poolUtils.js';
+import { createTodoTable, deleteAllTodos } from '../tableUtils/todoUtils.js';
+import { createTodo } from './command/impls/createTodo.js';
 
-export const TEST_DB_CONNECTION_STRING =
-  "postgresql://testuser:test@localhost:5432/testdb";
+export const TEST_DB_CONNECTION_STRING = 'postgresql://testuser:test@localhost:5432/testdb';
 
-export const setupTodoTestDatabase = async (
-  connectionString: string,
-): Promise<pg.Pool> => {
+export const setupTodoTestDatabase = async (connectionString: string): Promise<pg.Pool> => {
   const pool = createPool(connectionString);
   await createTodoTable(pool);
   return pool;
 };
 
-export const teardownTodoTestDatabase = async (
-  pool: pg.Pool,
-): Promise<void> => {
+export const teardownTodoTestDatabase = async (pool: pg.Pool): Promise<void> => {
   await closePool(pool);
 };
 
@@ -34,13 +29,11 @@ export type CreateTestTodoParams = {
   updatedAt?: Date;
 };
 
-export const createTestTodoInDb = async (
-  params: CreateTestTodoParams,
-): Promise<Todo> => {
+export const createTestTodoInDb = async (params: CreateTestTodoParams): Promise<Todo> => {
   const now = new Date();
   const todo = new Todo(
-    params.id ?? "1",
-    params.title ?? "Test Todo",
+    params.id ?? '1',
+    params.title ?? 'Test Todo',
     params.completed ?? false,
     params.createdAt ?? now,
     params.updatedAt ?? now,

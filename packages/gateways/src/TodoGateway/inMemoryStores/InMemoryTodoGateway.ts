@@ -1,11 +1,11 @@
-import type { Todo } from "@repo/entities/Todo";
-import type { TodoGateway } from "../TodoGateway.js";
-import type { InMemoryTodoStore } from "./InMemoryTodoStore.js";
-import { createTodo } from "../command/inMemory/createTodo.js";
-import { updateTodo } from "../command/inMemory/updateTodo.js";
-import { deleteTodo } from "../command/inMemory/deleteTodo.js";
-import { getTodo } from "../query/inMemory/getTodo.js";
-import { getTodos } from "../query/inMemory/getTodos.js";
+import type { Todo } from '@repo/entities/Todo';
+import type { TodoGateway } from '../TodoGateway.js';
+import type { InMemoryTodoStore } from './InMemoryTodoStore.js';
+import { createTodo } from '../command/inMemory/createTodo.js';
+import { updateTodo } from '../command/inMemory/updateTodo.js';
+import { deleteTodo } from '../command/inMemory/deleteTodo.js';
+import { getTodo } from '../query/inMemory/getTodo.js';
+import { getTodos } from '../query/inMemory/getTodos.js';
 
 export class InMemoryTodoGateway implements TodoGateway {
   private todos: InMemoryTodoStore = new Map();

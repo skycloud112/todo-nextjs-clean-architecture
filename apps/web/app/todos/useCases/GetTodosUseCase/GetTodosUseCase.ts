@@ -1,5 +1,5 @@
-import type { TodoGateway } from "@repo/gateways/TodoGateway";
-import { toISOString } from "@repo/utils/date";
+import type { TodoGateway } from '@repo/gateways/TodoGateway';
+import { toISOString } from '@repo/utils/date';
 
 export type TodoDto = {
   id: string;

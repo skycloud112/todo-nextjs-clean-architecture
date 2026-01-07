@@ -1,13 +1,13 @@
-import type pg from "pg";
+import type pg from 'pg';
 
-export const TODO_TABLE_NAME = "todo";
+export const TODO_TABLE_NAME = 'todo';
 
 export const TodoTableFieldNames = {
-  id: "id",
-  title: "title",
-  completed: "completed",
-  created_at: "created_at",
-  updated_at: "updated_at",
+  id: 'id',
+  title: 'title',
+  completed: 'completed',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
 } as const;
 
 export const createTodoTable = async (pool: pg.Pool): Promise<void> => {

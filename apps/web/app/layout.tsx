@@ -1,17 +1,17 @@
-import React from "react";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
-import { QueryProvider } from "@web/providers/QueryProvider";
+import React from 'react';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
+import { QueryProvider } from '@web/providers/QueryProvider';
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: 'light',
   },
 });
 
 export const metadata = {
-  title: "Todo App - Clean Architecture Demo",
-  description: "A demonstration of clean architecture patterns with Next.js",
+  title: 'Todo App - Clean Architecture Demo',
+  description: 'A demonstration of clean architecture patterns with Next.js',
 };
 
 type RootLayoutProps = {
@@ -20,7 +20,7 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps): React.ReactElement => {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>

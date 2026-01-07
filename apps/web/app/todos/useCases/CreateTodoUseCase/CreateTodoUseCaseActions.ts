@@ -1,12 +1,12 @@
-"use server";
+'use server';
 
-import { TodoGatewayImpl } from "@repo/gateways/TodoGatewayImpl";
-import { getSharedPool } from "@repo/gateways/poolUtils";
+import { TodoGatewayImpl } from '@repo/gateways/TodoGatewayImpl';
+import { getSharedPool } from '@repo/gateways/poolUtils';
 import {
   CreateTodoUseCase,
   type CreateTodoRequest,
   type CreateTodoResponse,
-} from "./CreateTodoUseCase";
+} from './CreateTodoUseCase';
 
 const POSTGRES_URL = process.env.POSTGRES_URL!;
 

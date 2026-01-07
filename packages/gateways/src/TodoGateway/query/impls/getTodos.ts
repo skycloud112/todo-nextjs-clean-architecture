@@ -1,10 +1,7 @@
-import type pg from "pg";
-import SQL from "@nearform/sql";
-import { Todo } from "@repo/entities/Todo";
-import {
-  TODO_TABLE_NAME,
-  TodoTableFieldNames,
-} from "../../../tableUtils/todoUtils.js";
+import type pg from 'pg';
+import SQL from '@nearform/sql';
+import { Todo } from '@repo/entities/Todo';
+import { TODO_TABLE_NAME, TodoTableFieldNames } from '../../../tableUtils/todoUtils.js';
 
 type TodoRow = {
   id: string;
@@ -30,11 +27,5 @@ export const getTodos = async (pool: pg.Pool): Promise<Todo[]> => {
 };
 
 const mapRowToTodo = (row: TodoRow): Todo => {
-  return new Todo(
-    row.id,
-    row.title,
-    row.completed,
-    row.created_at,
-    row.updated_at,
-  );
+  return new Todo(row.id, row.title, row.completed, row.created_at, row.updated_at);
 };

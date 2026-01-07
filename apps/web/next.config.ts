@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@repo/entities", "@repo/gateways", "@repo/utils"],
+  transpilePackages: ['@repo/entities', '@repo/gateways', '@repo/utils'],
 };
 
 export default nextConfig;

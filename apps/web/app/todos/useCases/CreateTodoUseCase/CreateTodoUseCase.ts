@@ -1,6 +1,6 @@
-import { Todo } from "@repo/entities/Todo";
-import type { TodoGateway } from "@repo/gateways/TodoGateway";
-import { uuid } from "@repo/utils/uuid";
+import { Todo } from '@repo/entities/Todo';
+import type { TodoGateway } from '@repo/gateways/TodoGateway';
+import { uuid } from '@repo/utils/uuid';
 
 export type CreateTodoRequest = {
   title: string;

@@ -1,10 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import { GetTodosUseCaseGetTodosAction } from "./GetTodosUseCaseActions";
-import type { TodoDto } from "./GetTodosUseCase";
+import { useQuery } from '@tanstack/react-query';
+import { GetTodosUseCaseGetTodosAction } from './GetTodosUseCaseActions';
+import type { TodoDto } from './GetTodosUseCase';
 
 export const useTodos = () => {
   const query = useQuery({
-    queryKey: ["todos"],
+    queryKey: ['todos'],
     queryFn: async () => {
       const response = await GetTodosUseCaseGetTodosAction();
       return response.todos;

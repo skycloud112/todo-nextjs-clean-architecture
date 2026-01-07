@@ -1,0 +1,30 @@
+{
+  "name": "@repo/gateways",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./TodoGateway": "./src/TodoGateway/TodoGateway.ts",
+    "./TodoGatewayImpl": "./src/TodoGateway/TodoGatewayImpl.ts",
+    "./InMemoryTodoGateway": "./src/TodoGateway/inMemoryStores/InMemoryTodoGateway.ts",
+    "./todoGatewayTestUtils": "./src/TodoGateway/todoGatewayTestUtils.ts",
+    "./tableUtils/todoUtils": "./src/tableUtils/todoUtils.ts",
+    "./poolUtils": "./src/poolUtils.ts"
+  },
+  "scripts": {
+    "ts": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@repo/entities": "workspace:*",
+    "@nearform/sql": "^1.10.1",
+    "pg": "^8.13.1"
+  }
+}

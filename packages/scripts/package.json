@@ -1,0 +1,21 @@
+{
+  "name": "@repo/scripts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ts": "tsc --noEmit",
+    "init-db": "tsx init-db.ts"
+  },
+  "dependencies": {
+    "@repo/gateways": "workspace:*",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.11",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.2",
+    "@repo/typescript-config": "workspace:*"
+  }
+}

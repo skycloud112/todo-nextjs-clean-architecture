@@ -1,7 +1,7 @@
 import type pg from 'pg';
 import SQL from '@nearform/sql';
 import { Todo } from '@repo/entities/Todo';
-import { TODO_TABLE_NAME, TodoTableFieldNames } from '../../../tableUtils/todoUtils.js';
+import { TODO_TABLE_NAME, TodoTableFieldNames } from '../../../tableUtils/todoUtils';
 
 type TodoRow = {
   id: string;

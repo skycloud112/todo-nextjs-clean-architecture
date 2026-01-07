@@ -1,5 +1,5 @@
 import type { Todo } from '@repo/entities/Todo';
-import type { InMemoryTodoStore } from '../../inMemoryStores/InMemoryTodoStore.js';
+import type { InMemoryTodoStore } from '../../inMemoryStores/InMemoryTodoStore';
 
 export const getTodos = async (todos: InMemoryTodoStore): Promise<Todo[]> => {
   const result = Array.from(todos.values());

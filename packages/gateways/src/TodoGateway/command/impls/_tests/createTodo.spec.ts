@@ -6,9 +6,9 @@ import {
   teardownTodoTestDatabase,
   cleanupTodoTestData,
   TEST_DB_CONNECTION_STRING,
-} from '../../../todoGatewayTestUtils.js';
-import { createTodo } from '../createTodo.js';
-import { getTodo } from '../../../query/impls/getTodo.js';
+} from '../../../todoGatewayTestUtils';
+import { createTodo } from '../createTodo';
+import { getTodo } from '../../../query/impls/getTodo';
 
 describe('createTodo', () => {
   let pool: pg.Pool;

@@ -1,8 +1,8 @@
 import type pg from 'pg';
 import { Todo } from '@repo/entities/Todo';
-import { createPool, closePool } from '../poolUtils.js';
-import { createTodoTable, deleteAllTodos } from '../tableUtils/todoUtils.js';
-import { createTodo } from './command/impls/createTodo.js';
+import { createPool, closePool } from '../poolUtils';
+import { createTodoTable, deleteAllTodos } from '../tableUtils/todoUtils';
+import { createTodo } from './command/impls/createTodo';
 
 export const TEST_DB_CONNECTION_STRING = 'postgresql://testuser:test@localhost:5432/testdb';
 

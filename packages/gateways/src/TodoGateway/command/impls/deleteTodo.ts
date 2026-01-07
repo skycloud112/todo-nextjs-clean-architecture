@@ -1,6 +1,6 @@
 import type pg from 'pg';
 import SQL from '@nearform/sql';
-import { TODO_TABLE_NAME, TodoTableFieldNames } from '../../../tableUtils/todoUtils.js';
+import { TODO_TABLE_NAME, TodoTableFieldNames } from '../../../tableUtils/todoUtils';
 
 export const deleteTodo = async (pool: pg.Pool, id: string): Promise<void> => {
   const query = SQL`

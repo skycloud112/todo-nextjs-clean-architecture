@@ -1,11 +1,11 @@
 import type pg from 'pg';
 import type { Todo } from '@repo/entities/Todo';
-import type { TodoGateway } from './TodoGateway.js';
-import { createTodo } from './command/impls/createTodo.js';
-import { updateTodo } from './command/impls/updateTodo.js';
-import { deleteTodo } from './command/impls/deleteTodo.js';
-import { getTodo } from './query/impls/getTodo.js';
-import { getTodos } from './query/impls/getTodos.js';
+import type { TodoGateway } from './TodoGateway';
+import { createTodo } from './command/impls/createTodo';
+import { updateTodo } from './command/impls/updateTodo';
+import { deleteTodo } from './command/impls/deleteTodo';
+import { getTodo } from './query/impls/getTodo';
+import { getTodos } from './query/impls/getTodos';
 
 export class TodoGatewayImpl implements TodoGateway {
   constructor(private pool: pg.Pool) {}
